@@ -1,0 +1,94 @@
+stages:
+  - build
+  - deploy
+  - linking
+
+build app:
+  stage: build
+  image: registry.srv.local:5043/ubuntu-nodejs-gulp:latest
+  only:
+    - tags
+  tags:
+    - devops
+  script:
+    - mkdir -p ~/.ssh
+    - printenv CI_BUILD_SSH_KEY > ~/.ssh/id_rsa
+    - echo -e "UpdateHostKeys yes\nStrictHostKeyChecking no" >> ~/.ssh/config
+    - chmod -R go-rwx ~/.ssh
+    - envsubst < config.json > config.json.1
+    - mv -f config.json.1 config.json
+    - npm install
+    - node ./node_modules/gulp/bin/gulp.js build
+  cache:
+    paths:
+    - node_modules/
+  artifacts:
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME"
+    paths:
+      - htdocs
+    when:      on_success
+    expire_in: 1d
+
+.deploy_to: &deploy_common
+  stage: deploy
+  image: registry.srv.local:5043/ubuntu-sshclient:latest
+  tags:
+    - sshclient
+  only:
+    - tags
+  when:  manual
+  variables: &deploy_common_variables
+    GIT_STRATEGY: none
+  before_script:
+    - /usr/local/bin/helper before
+  artifacts:
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME-$CI_JOB_NAME"
+    paths:
+      - stdout*
+      - stderr*
+    when:       always
+    expire_in:  1d
+
+deploy:
+  <<: *deploy_common
+  dependencies:
+    - build app
+  environment:
+    name:    stage/$CI_COMMIT_REF_NAME
+    url:     https://${CI_PROJECT_NAME}-$CI_COMMIT_REF_NAME.l.xsolla.com
+    on_stop: stop
+  variables:
+    <<:             *deploy_common_variables
+    DEPLOY_SSH_KEY: PROD_DEPLOY_SSH_KEY
+    DNS_SRV:        _http._tcp.www-landing-prod.local
+  script:
+    - touch post-deploy.sh
+    - /usr/local/bin/helper deploy .
+
+stop:
+  <<: *deploy_common
+  dependencies: []
+  environment:
+    name:   stage/$CI_COMMIT_REF_NAME
+    action: stop
+  variables:
+    <<:             *deploy_common_variables
+    DEPLOY_SSH_KEY: PROD_DEPLOY_SSH_KEY
+    DNS_SRV:        _http._tcp.www-landing-prod.local
+  script:
+    - /usr/local/bin/helper stop
+
+current:
+  <<: *deploy_common
+  dependencies: [ 'deploy' ]
+  environment:
+    name:   stage/current
+    url:    https://${CI_PROJECT_NAME}.l.xsolla.com
+  stage: linking
+  variables:
+    <<:             *deploy_common_variables
+    DEPLOY_SSH_KEY: PROD_DEPLOY_SSH_KEY
+    DNS_SRV:        _http._tcp.www-landing-prod.local
+  script:
+    - /usr/local/bin/helper current
+    - 'if [[ $(echo -n $CI_COMMIT_REF_NAME | grep -E "^v-.*") ]]; then curl -X POST --max-time 180 -H "Content-Type: application/json; charset=UTF-8" -d "{\"text\":\"*LANDING DEPLOYED*\n *App:* $CI_PROJECT_NAME \n *URL:* https://${CI_PROJECT_NAME}.l.xsolla.com \n *By:* $GITLAB_USER_LOGIN \n *Tag:* $CI_COMMIT_REF_NAME\"}" "$HANGOUTS_DEPLOYMENT_CHAT" || true; fi'
