@@ -159,7 +159,7 @@ function initWidget(callback) {
   var s = document.createElement("script");
   s.type = "text/javascript";
   s.async = true;
-  s.src = "https://static.xsolla.com/embed/pay2play/2.1.7/widget.min.js";
+  s.src = "https://static.xsolla.com/embed/pay2play/2.2.0/widget.min.js";
   s.addEventListener("load", callback, false);
   var head = document.getElementsByTagName("head")[0];
   head.appendChild(s);
