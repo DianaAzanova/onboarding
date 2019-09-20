@@ -11,6 +11,9 @@ build app:
   tags:
     - devops
   script:
+    - mkdir -p ~/.ssh
+    - echo -e "UpdateHostKeys yes\nStrictHostKeyChecking no" >> ~/.ssh/config
+    - chmod -R go-rwx ~/.ssh
     - npm install
     - node ./node_modules/gulp/bin/gulp.js build
   cache:
