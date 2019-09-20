@@ -91,4 +91,3 @@ current:
     DNS_SRV:        _http._tcp.www-landing-prod.local
   script:
     - /usr/local/bin/helper current
-    - 'if [[ $(echo -n $CI_COMMIT_REF_NAME | grep -E "^v-.*") ]]; then curl -X POST --max-time 180 -H "Content-Type: application/json; charset=UTF-8" -d "{\"text\":\"*LANDING DEPLOYED*\n *App:* $CI_PROJECT_NAME \n *URL:* https://${CI_PROJECT_NAME}.l.xsolla.com \n *By:* $GITLAB_USER_LOGIN \n *Tag:* $CI_COMMIT_REF_NAME\"}" "$HANGOUTS_DEPLOYMENT_CHAT" || true; fi'

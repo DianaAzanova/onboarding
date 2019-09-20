@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./node_modules/gulp/bin/gulp.js dev",
-    "build": "node ./node_modules/gulp/bin/gulp.js build",
-    "preparation": "node ./node_modules/gulp/bin/gulp.js preparation"
+    "build": "node ./node_modules/gulp/bin/gulp.js build"
   },
   "repository": {
     "type": "git",

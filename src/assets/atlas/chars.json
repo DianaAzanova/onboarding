@@ -1,0 +1,329 @@
+{
+    "frames": [
+        {
+            "filename": "walk/hero-walk-front/hero-walk-front-1",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-front/hero-walk-front-2",
+            "frame": {
+                "x": 26,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-front/hero-walk-front-3",
+            "frame": {
+                "x": 52,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-front/hero-walk-front-4",
+            "frame": {
+                "x": 78,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "idle/hero-idle-front/hero-idle-front",
+            "frame": {
+                "x": 104,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-side/hero-walk-side-1",
+            "frame": {
+                "x": 0,
+                "y": 36,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-side/hero-walk-side-2",
+            "frame": {
+                "x": 26,
+                "y": 36,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-side/hero-walk-side-3",
+            "frame": {
+                "x": 52,
+                "y": 36,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-side/hero-walk-side-4",
+            "frame": {
+                "x": 78,
+                "y": 36,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "idle/hero-idle-side/hero-idle-side",
+            "frame": {
+                "x": 104,
+                "y": 36,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-back/hero-walk-back-1",
+            "frame": {
+                "x": 0,
+                "y": 72,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-back/hero-walk-back-2",
+            "frame": {
+                "x": 26,
+                "y": 72,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-back/hero-walk-back-3",
+            "frame": {
+                "x": 52,
+                "y": 72,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "walk/hero-walk-back/hero-walk-back-4",
+            "frame": {
+                "x": 78,
+                "y": 72,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        },
+        {
+            "filename": "idle/hero-idle-back/hero-idle-back",
+            "frame": {
+                "x": 104,
+                "y": 72,
+                "w": 26,
+                "h": 36
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 26,
+                "h": 36
+            },
+            "sourceSize": {
+                "w": 26,
+                "h": 36
+            }
+        }
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "spritesheet.png",
+        "size": {
+            "w": 130,
+            "h": 108
+        },
+        "scale": 1
+    }
+}
