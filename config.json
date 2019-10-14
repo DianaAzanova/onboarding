@@ -1,0 +1,5 @@
+{
+  "cdnPath": "https://cdn.xsolla.net/landings/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/",
+  "outputPath": "htdocs",
+  "landingName": "onboarding"
+}
