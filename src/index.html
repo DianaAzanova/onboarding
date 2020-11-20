@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title> Xsolla Demo </title>
+    <title> Дипломный проект </title>
 
     <style type="text/css">
 
@@ -19,9 +19,18 @@
         }
 
         canvas {
-            image-rendering: -moz-crisp-edges;
-            image-rendering: -webkit-crisp-edges;
-            image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbor; /* IE 7+ (не стандартное свойство) */
+			image-rendering: -webkit-optimize-contrast; /* Safari 6, UC Browser 9.9 */
+			image-rendering: -webkit-crisp-edges; /* Safari 7+ */
+			image-rendering: -moz-crisp-edges; /* Firefox 3.6+ */
+			image-rendering: -o-crisp-edges; /* Opera 12 */
+			image-rendering: pixelated; /* Chrome 41+ and Opera 26+ */
+			image-rendering: optimizeSpeed;
+			image-rendering: crisp-edges;
+			-ms-interpolation-mode: nearest-neighbor;
+			font-smooth: never;
+			-webkit-font-smoothing: none;
+			
         }
 
         @import url(http://fonts.googleapis.com/css?family=VT323);
