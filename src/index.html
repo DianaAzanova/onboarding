@@ -3,21 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <title> Дипломный проект </title>
-
     <style type="text/css">
-
-
         *{
             margin: 0;
             padding: 0;
         }
-
-
         #gameDiv{
             width: 500px;
             height: 288px;
         }
-
         canvas {
 			-ms-interpolation-mode: nearest-neighbor; /* IE 7+ (не стандартное свойство) */
 			image-rendering: -webkit-optimize-contrast; /* Safari 6, UC Browser 9.9 */
@@ -25,36 +19,25 @@
 			image-rendering: -moz-crisp-edges; /* Firefox 3.6+ */
 			image-rendering: -o-crisp-edges; /* Opera 12 */
 			image-rendering: pixelated; /* Chrome 41+ and Opera 26+ */
-			image-rendering: optimizeSpeed;
+			image-rendering: optimizeSpeed; /* Оптимизация скорости для браузеров */
 			image-rendering: crisp-edges;
 			-ms-interpolation-mode: nearest-neighbor;
 			font-smooth: never;
-			-webkit-font-smoothing: none;
-			
+			-webkit-font-smoothing: none;	
         }
-
         @import url(http://fonts.googleapis.com/css?family=VT323);
         .hiddenText {
             font-family: 'VT323', monospace;
             visibility: hidden;
             height: 0;
         }
-
     </style>
-
-
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-
-
     <script type="text/javascript" src="phaser.js"></script>
     <script type="text/javascript" src="game.js"></script>
-
     <meta name="viewport" content="initial-scale=1 user-scalable=0" />
-
-
 </head>
 <body>
 <p class="hiddenText"> . </p>
-
 </body>
 </html>

@@ -4,9 +4,11 @@ var manager;
 var gameWidth = 272;
 var gameHeight = 192;
 var globalMap;
-var group;
+var fragments;
 var audioFlag = true;
 var player_state;
+var score = 0;
+var scoreFragments;
 var PLAYER_STATE = {
     LEFT: 0,
     RIGHT: 1,
@@ -37,7 +39,7 @@ boot.prototype = {
         game.scale.pageAlignHorizontally = true;
         game.scale.pageAlignVertically = true;
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        game.renderer.renderSession.roundPixels = true; // blurring off
+        game.renderer.renderSession.roundPixels = true; // исключение неясных очертаний пикселей
         this.game.state.start("Preload");
     }
 }
@@ -49,46 +51,44 @@ preload.prototype = {
         var loadingBar = this.add.sprite(game.width / 2, game.height / 2, "loading");
         loadingBar.anchor.setTo(0.5);
         game.load.setPreloadSprite(loadingBar);
-        // load title screen
+        // тайлсеты
+        game.load.image("tileset", "assets/environment/tileset.png");
+        game.load.image("collisions", "assets/environment/collisions.png");
+        game.load.tilemap("map", "assets/maps/map.json", null, Phaser.Tilemap.TILED_JSON);
+        // атласы
+        game.load.atlasJSONArray("chars", "assets/atlas/chars.png", "assets/atlas/chars.json");
+		game.load.atlasJSONArray("manager", "assets/atlas/manager.png", "assets/atlas/manager.json");
+		game.load.atlasJSONArray("doc", "assets/atlas/doc.png", "assets/atlas/doc.json");
+		// экран приветствия
         game.load.image("title-bg", "assets/title/bg.png");
         game.load.image("title", "assets/title/xsolla.png");
         game.load.image("title-press-enter", "assets/title/enter.png");
 		game.load.image("instructions", "assets/title/window.png");
-        // tileset
-        game.load.image("tileset", "assets/environment/tileset.png");
-        game.load.image("collisions", "assets/environment/collisions.png");
-        game.load.tilemap("map", "assets/maps/map.json", null, Phaser.Tilemap.TILED_JSON);
-        // atlas
-        game.load.atlasJSONArray("chars", "assets/atlas/chars.png", "assets/atlas/chars.json");
-		game.load.atlasJSONArray("manager", "assets/atlas/manager.png", "assets/atlas/manager.json");
-		game.load.atlasJSONArray("doc", "assets/atlas/doc.png", "assets/atlas/doc.json");
 		//диалоговое окно
 		game.load.image("dialogbox", "assets/environment/dialog.png");
 		game.load.image("manager-dialog", "assets/atlas/manager-dialog.png");
 		game.load.image("doc-dialog", "assets/atlas/doc-dialog.png");
 		game.load.image("closebutton", "assets/environment/close.png");
+		game.load.image("over", "assets/environment/over.png");
+		game.load.image("win", "assets/environment/win.png");
 		//квест
-		game.load.image("codesnippet", "assets/environment/code snippet.png");
-		// audio
+		game.load.image("fragments", "assets/environment/fragments.png");
+		// музыка
         game.load.audio("music", ["assets/audio/Oblio-8-BitDancer.mp3"]);
-		//font
+		//шрифт
 		game.load.bitmapFont('font', 'assets/fonts/font.png', 'assets/fonts/font.fnt');
     },
     create: function () {
         this.startMusic();
 		this.game.state.start("TitleScreen");
-		
     },
 	    startMusic: function () {
         if (!audioFlag) {
             return
         }
-
         this.music = game.add.audio("music");
         this.music.loop = true;
-
         this.music.play();
-
     },
 
 }
@@ -101,7 +101,6 @@ titleScreen.prototype = {
         this.title.anchor.setTo(0.5, 1);
         var tween = game.add.tween(this.title);
         tween.to({y: 80 + 7}, 700, Phaser.Easing.Linear.In).yoyo(true).loop();
-
         tween.start();
         //
         this.pressEnter = game.add.image(game.width -130, game.height - 90, "title-press-enter");
@@ -110,7 +109,6 @@ titleScreen.prototype = {
         var startKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         startKey.onDown.add(this.startGame, this);
         this.state = 1;
-
 		game.time.events.loop(800, this.blinkText, this);
     },
     startGame: function () {
@@ -140,11 +138,14 @@ playGame.prototype = {
         this.createGroundLevel();
         this.createObjectLevel();
         this.createPlayer(8.5, 95);
+		this.createGroups();
 		this.createManager(7, 92);
 		this.createDoc(10, 11);
         this.createForeground();
         this.bindKeys();
         this.createCamera();
+		this.generaterFragments();
+		this.scoreFragments();
     },
     createCamera: function () {
         game.camera.follow(player);
@@ -169,7 +170,6 @@ playGame.prototype = {
         globalMap = game.add.tilemap("map");
         globalMap.addTilesetImage("collisions");
         globalMap.addTilesetImage("tileset");
-        //group = game.add.group();
     },
     createForeground: function () {
         this.foreground = globalMap.createLayer('Foreground');
@@ -201,7 +201,6 @@ playGame.prototype = {
         var temp = new Player(game, x, y);
         game.add.existing(temp);
     },
-	
 	createManager: function (x, y) {
         var temp = new Manager(game, x, y);
         game.add.existing(temp);
@@ -209,14 +208,56 @@ playGame.prototype = {
 	createDoc: function (x, y) {
         var temp = new Doc(game, x, y);
         game.add.existing(temp);
-    }, 
-    update: function () {
-        // physics
+    },
+	  update: function () {
+        // физика
         game.physics.arcade.collide(player, this.layer_collisions);
         this.movePlayer();
-		
+		this.game.physics.arcade.collide(player,fragments, this.collectFragments, null, this);
     },
+	  createGroups: function () {
+	fragments = game.add.group();
+    fragments.enableBody = true;
+    },
+	
+generaterFragments: function() {
 
+    fragments.physicsBodyType = Phaser.Physics.ARCADE;
+	var fragment;
+	fragment=fragments.create(96,1344,"fragments");
+	fragment=fragments.create(208,1296,"fragments");
+	fragment=fragments.create(192,1184,"fragments");
+	fragment=fragments.create(48,1136,"fragments");
+	fragment=fragments.create(64,832,"fragments");
+	fragment=fragments.create(224,784,"fragments");
+	fragment=fragments.create(224,976,"fragments");
+	fragment=fragments.create(64,672,"fragments");
+	fragment=fragments.create(32,528,"fragments");
+	fragment=fragments.create(208,464,"fragments");
+	fragment=fragments.create(176,80,"fragments");
+	fragment=fragments.create(32,128,"fragments");
+	fragment=fragments.create(144,304,"fragments");
+	fragment=fragments.create(224,512,"fragments");
+	fragments.visible=false;
+    },
+	collectFragments: function(player, fragments) {
+    //обновление счетчика
+    score++;
+	scoreFragments.text = 'ahfuvtynjd: ' + score;
+    fragments.kill();
+	if (score == 14) {dialogbox = game.add.image(64, 51, "over");
+		dialogbox.fixedToCamera = true;
+		} ;
+  },	
+  scoreFragments: function() {  
+	win = game.add.image(this.game.width-268, this.game.height - 188, "win");
+	win.fixedToCamera = true;
+    scoreFragments = game.add.bitmapText(this.game.width-265, this.game.height - 185, "font",'ahfuvtynjd: 0',12);
+    scoreFragments.fixedToCamera = true;
+	scoreFragments.tint = "0x000000";
+	win.visible=false;
+	scoreFragments.visible=false;
+},
     movePlayer: function () {
         var vel = 75;
         // capture input
@@ -253,10 +294,7 @@ playGame.prototype = {
         }
 
     },
-	
-}
-
-// entities
+  }
 
 // player
 
@@ -318,43 +356,39 @@ Player.prototype.update = function () {
     this.initY = y;
     Phaser.Sprite.call(this, game, x, y, "manager", "front2");
     this.anchor.setTo(0.5);
-	this.inputEnabled = true; //  Enables all kind of input actions on this image (click, etc)
-	this.input.useHandCursor = true; //при наведении рука- курсор
-	//добавляю окно
+	this.inputEnabled = true; 
+	this.input.useHandCursor = true; //при наведении рука - курсор
+	//добавление окна диалога
 	this.events.onInputUp.add(down,this);
 	function down(){
 		managerdialog = game.add.sprite(16, 1510, "manager-dialog");
-		managerdialog.fixedToCamera = true;
-		managerdialog.cameraOffset.setTo(16, 99);
 		dialogbox = game.add.image(0, 1552, "dialogbox");
-		dialogbox.fixedToCamera = true;
-		dialogbox.cameraOffset.setTo(0, 146);
 		var content = [ "ghbdtn! ns yjdtymrbq? vtyz pjden Ekbz, z gjvjufE jcdjbnmcz\n yjdbxrfv. ctqxfc ntAt yeByj gjljqnb r hjvfye, e ytuj lkz\n ntAz tcnm pflfybt. jy yfCjlbncz yf nhtnmtv DnfBt.\n pfjlyj jcvjnhbimcz : ) elfxb!" ]; 
 		dialogtext = game.add.bitmapText(10, 1563, "font",content,6);
 		dialogtext.lineSpacing = -7;
-		dialogtext.fixedToCamera = true;
-		dialogtext.cameraOffset.setTo(10, 155);
-		
 		closebutton = game.add.button(10, 10, "closebutton");
 		closebutton.fixedToCamera = true;
+		managerdialog.fixedToCamera = true;
+		dialogbox.fixedToCamera = true;
+		dialogtext.fixedToCamera = true;
+		managerdialog.cameraOffset.setTo(16, 99);
+		dialogbox.cameraOffset.setTo(0, 146);
+		dialogtext.cameraOffset.setTo(10, 155);
 		closebutton.cameraOffset.setTo(254, 175);
 		closebutton.onInputUp.addOnce(removeDialog,this);
-		function removeDialog (){dialogbox.destroy();managerdialog.destroy();closebutton.destroy();dialogtext.destroy();}
 		
-
-
-	}
-	
-	
-    game.physics.arcade.enable(this);
+	function removeDialog (){
+		dialogbox.destroy();
+		managerdialog.destroy();
+		closebutton.destroy();
+		dialogtext.destroy();
+								}
+					}
+game.physics.arcade.enable(this);
 this.body.setSize(15, 15, 5, 21);
-
-}
+									}
 Manager.prototype = Object.create(Phaser.Sprite.prototype); 
-//Manager.prototype.constructor = Manager;
-
-//Manager.style.cursor = "url('assets/sprites/quest.cur'), auto";
-
+Manager.prototype.constructor = Manager;
 
 //doc
 Doc = function (game, x, y) {
@@ -364,64 +398,37 @@ Doc = function (game, x, y) {
     this.initY = y;
     Phaser.Sprite.call(this, game, x, y, "doc", "doc-front2");
     this.anchor.setTo(0.5);
-	this.inputEnabled = true; //  Enables all kind of input actions on this image (click, etc)
-	this.input.useHandCursor = true; //при наведении рука- курсор
+	this.inputEnabled = true;
+	this.input.useHandCursor = true; //при наведении рука - курсор
 	//добавляю окно
  	this.events.onInputUp.add(down,this);
 	function down(){
 		docdialog = game.add.sprite(16, 1510, "doc-dialog");
-		docdialog.fixedToCamera = true;
-		docdialog.cameraOffset.setTo(16, 99);
 		dialogbox = game.add.image(0, 1552, "dialogbox");
-		dialogbox.fixedToCamera = true;
-		dialogbox.cameraOffset.setTo(0, 146);
 		var content = [ "ghbdtncndeE. z hjvfy,b e vtyz tcnm bcgsnfybt lkz ntAz. xnjAs\n gjgfcnm r yfv d rjvfyle ntAt ytjACjlbvj cjplfnm ghjuhfvve.\n lkz Dnjuj cjAthb 14 ahfuvtynjd rjlf b z jwtyE ndjb pyfybz." ]; 
 		dialogtext = game.add.bitmapText(10, 1563,"font", content,6);
 		dialogtext.lineSpacing = -7;
-		dialogtext.fixedToCamera = true;
-		dialogtext.cameraOffset.setTo(10, 157);
-		
 		closebutton = game.add.button(10, 10, "closebutton");
+		dialogtext.fixedToCamera = true;
+		dialogbox.fixedToCamera = true;
+		docdialog.fixedToCamera = true;
 		closebutton.fixedToCamera = true;
+		docdialog.cameraOffset.setTo(16, 99);
+		dialogbox.cameraOffset.setTo(0, 146);
+		dialogtext.cameraOffset.setTo(10, 157);
 		closebutton.cameraOffset.setTo(254, 175);
 		closebutton.onInputUp.addOnce(removeDialog,this);
-		function removeDialog (){dialogbox.destroy();docdialog.destroy();closebutton.destroy();dialogtext.destroy();//закрыть окно
-				fragments = game.add.group();
-		fragments.enableBody=true;
-		for (var i=0;i<4;i++)
-		{
-			var fragment=fragments.game.add.sprite(game.rnd.integerInRange(96,160),game.rnd.integerInRange(128,208),"codesnippet");
-			/* var fragment=fragments.game.add.sprite(Math.sin(Math.PI*20/i)+i*i,Math.sin(Math.PI*20/i)+i*i,"codesnippet"); */
-			/* 			var fragment=fragments.game.add.sprite(Math.random()*60,1500+Math.random()*60,"codesnippet"); */
-		} 
-		//2 платформа
-		for (var i=0;i<3;i++)
-		{
-			var fragment=fragments.game.add.sprite(game.rnd.integerInRange(64,112),game.rnd.integerInRange(432,576),"codesnippet");
-		} 
-		//3 платформа
-		for (var i=0;i<3;i++)
-		{
-			var fragment=fragments.game.add.sprite(game.rnd.integerInRange(96,128),game.rnd.integerInRange(720,880),"codesnippet");
-		} 
-		//4 платформа
-				for (var i=0;i<4;i++)
-		{
-			var fragment=fragments.game.add.sprite(game.rnd.integerInRange(112,160),game.rnd.integerInRange(1184,1376),"codesnippet");
-		} 
-			game.physics.arcade.overlap(player, fragments, collectFragment, null, this);
-
-function collectFragment (player, fragment) {
-    fragment.kill();
-}
+		function removeDialog (){
+			dialogbox.destroy();
+			docdialog.destroy();
+			closebutton.destroy();
+			dialogtext.destroy();//закрыть окно
+		fragments.visible=true;
+		win.visible=true;
+		scoreFragments.visible=true;
 		}
-		
-	} 
-
+	}
     game.physics.arcade.enable(this);
 this.body.setSize(15, 15, 5, 21);
-
 }
-
 Doc.prototype = Object.create(Phaser.Sprite.prototype); 
-
