@@ -1,0 +1,30 @@
+{
+	"1":{
+			"name":"-HR",
+			"position_x":7.5,
+			"position_y":92,
+			"atlas":"personages",
+			"startFrame":"HR-idle-front"
+		},
+	"2":{
+			"name":"-sasha",
+			"position_x":3.5,
+			"position_y":26,
+			"atlas":"personages",
+			"startFrame":"sasha-idle-front"
+		},
+	"3":{
+			"name":"-artem",
+			"position_x":4.5,
+			"position_y":13,
+			"atlas":"personages",
+			"startFrame":"artem-idle-front"
+		},
+	"4":{
+			"name":"-hostess",
+			"position_x":12.5,
+			"position_y":5,
+			"atlas":"personages",
+			"startFrame":"hostess-idle-front"
+		}
+}
