@@ -1,0 +1,94 @@
+{
+    "frames": [{
+            "filename": "HR",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "sasha",
+            "frame": {
+                "x": 104,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "hostess",
+            "frame": {
+                "x": 208,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "ecologist",
+            "frame": {
+                "x": 312,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "spritesheet.png",
+        "size": {
+            "w": 416,
+            "h": 144
+        },
+        "scale": 1
+    }
+}
