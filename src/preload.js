@@ -103,12 +103,29 @@ preload.prototype = {
         game.load.image("counter3", "assets/sprites/counter3.png");
 		game.load.image("counter_wp", "assets/sprites/counter_wp.png");
 		game.load.image("done_wp", "assets/sprites/done_wp.png");
-		
+		game.load.image("message", "assets/sprites/message.png");
+		game.load.image("countdown", "assets/sprites/countdown.png");
+		game.load.image("pizza", "assets/sprites/pizza.png");
+		game.load.image("WPX_MESSAGE", "assets/sprites/WPX_MESSAGE.png");
+		game.load.image("WTX", "assets/sprites/WTX.png");
+		game.load.atlasJSONArray("ball_b", "assets/sprites/ball_b.png", "assets/sprites/ball_b.json");
+		game.load.atlasJSONArray("ball_g", "assets/sprites/ball_g.png", "assets/sprites/ball_b.json");
+		game.load.atlasJSONArray("ball_p", "assets/sprites/ball_p.png", "assets/sprites/ball_b.json");
+		game.load.atlasJSONArray("ball_r", "assets/sprites/ball_r.png", "assets/sprites/ball_b.json");
+		game.load.atlasJSONArray("ball_y", "assets/sprites/ball_y.png", "assets/sprites/ball_b.json");
 		game.load.image("pen", "assets/sprites/pen.png");
 		game.load.image("notepad", "assets/sprites/notepad.png");
 		game.load.image("pillow", "assets/sprites/pillow.png");
 		game.load.image("pack", "assets/sprites/pack.png");
 		game.load.image("cup", "assets/sprites/cup.png");
+		
+		//аудио
+		game.load.audio('Synthwave','assets/audio/Electronic_80s_Synthwave.wav');
+		
+		//mobs
+
+
+
 
     },
     create: function () {

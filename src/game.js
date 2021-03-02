@@ -120,7 +120,7 @@ playGame.prototype = {
 		welcomePack.kill();
   },
     movePlayer: function () {
-        var vel = 200;
+        var vel = 300;
         // capture input
         if (this.wasd.down.isDown) {
             player_state = PLAYER_STATE.WALKING_DOWN;
@@ -187,6 +187,7 @@ Player.prototype.update = function () {
 	player.SignalDistance.dispatch(416, 3264, content.point_3[1], 2); 
 	player.SignalDistance.dispatch(416, 1664, content.point_4[1], 3);
 	player.SignalDistance.dispatch(416, 832, content.point_5[1], 4);
+	player.SignalDistance.dispatch(500, 645, content.point_5[1], 5);
     // player walk animation
     if (player_state == PLAYER_STATE.WALKING_DOWN) {
         this.animations.play("walk-front");
@@ -311,6 +312,8 @@ NPC.prototype.update = function () {
     }
 }
 
+
+
 var i = 0;
 dialogbuttons = [];
 dialogbuttons[0] = {
@@ -354,6 +357,9 @@ function autoHRdialog(x, y, content, keyAutoDialog) {
         }
         switchKey++;
     }
+	if (point7_key == 2 && distance < 300 && switchKey == keyAutoDialog) {
+		Point8();    
+	}
 }
 function destroyGroupDialogWin() {
     groupDialogWin.removeChildren();
@@ -452,10 +458,9 @@ function Point3() {
         nextbutton.cameraOffset.setTo(975, 560);
         nextbutton.onInputUp.addOnce(destroyGroupDialogWin, this);
         // счетчик
-        counterFrame = game.add.image(0, gameHeight, "counter0");
+        counterFrame = game.add.image(0, 0, "counter0");
         counterFrame.fixedToCamera = true;
-        counterFrame.cameraOffset.setTo(848, 0);
-        counterText = game.add.bitmapText(945, 52, "pixel_font", "0/3", 24);
+        counterText = game.add.bitmapText(95, 52, "pixel_font", "0/3", 24);
         counterText.fixedToCamera = true;
         counterBook = 0;
     }
@@ -592,8 +597,6 @@ var Point5 = function () {
 		}
 		 
 	}
-
-
 }
 	 function toPoint6() {
         groupDialogWin.removeChildren();
@@ -606,35 +609,147 @@ var Point6 = function () {
     DialogWin(content.point_6[1], i, dialogbuttons[1]);
     dialogtext.fontSize = 20;
     nextbutton.onInputUp.add(questWelcomePack, this);
-    counter_wp = game.add.image(848, 0, "counter_wp");
+    counter_wp = game.add.image(0, 0, "counter_wp");
 		counter_wp.fixedToCamera = true;
 
     function questWelcomePack() {
         welcomePack.setAll("body.enable", true);
         groupDialogWin.removeChildren();
-        //если счетчик выполнен. то окно с предупреждением и таймером
-        // если не успел, то player появляется на этаж выше и бежит на чердак player.reset
-        // если опять не успел, то появляется еще на этаж выше к чердаку
-
     }
 }
 function checkmark() {
     if (welcomePack.children[0].alive == false) {
-        game.add.sprite(891, 51, 'done_wp').fixedToCamera = true;
+        game.add.sprite(43, 51, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[1].alive == false) {
-        game.add.sprite(891, 135, 'done_wp').fixedToCamera = true;
+        game.add.sprite(43, 135, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[2].alive == false) {
-        game.add.sprite(891, 107, 'done_wp').fixedToCamera = true;
+        game.add.sprite(43, 107, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[3].alive == false) {
-        game.add.sprite(891, 163, 'done_wp').fixedToCamera = true;
+        game.add.sprite(43, 163, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[4].alive == false) {
-        game.add.sprite(891, 79, 'done_wp').fixedToCamera = true;
+        game.add.sprite(43, 79, 'done_wp').fixedToCamera = true;
     }
+	if (welcomePack.checkAll("alive",false)){Point7()}
 }
+var timer;
+var point7_key = 1;
+ function Point7(){
+	 game.world.removeChildren(28,45); // удаляет счетчик wp
+	message = game.add.image(296, 142, "message");
+	message.fixedToCamera = true;
+	okbutton = game.add.button(512, 308, "okbutton");
+	okbutton.fixedToCamera = true;
+	okbutton.onInputUp.add(startRun, this);
+	countdown = game.add.image(0, 0, "countdown");
+	countdown.fixedToCamera = true;
+	timertext = game.add.bitmapText(62, 39, "pixel_font", "1.00", 48);
+	timertext.fixedToCamera = true;
+	//коробки пиццы
+	game.add.image(313, 736, "pizza");
+	game.add.image(835, 592, "pizza");
+	
+	game.add.image(263, 727, "pizza").scale.x=-1;
+	game.add.image(338, 663, "pizza").scale.x=-1;
+	game.add.image(769, 602, "pizza").scale.x=-1;
+	game.add.image(850, 401, "pizza").scale.x=-1;
+ }
+ function startRun(){
+	 message.destroy();
+	 okbutton.destroy();
+	 x_reset = player.position.x;
+	 y_reset = player.position.y;
+	 timer = game.time.create(false);
+	 timer.loop(Phaser.Timer.MINUTE, updateCounter, this);
+	 timer.start();
+	 point7_key++;
+	 timertext.update = function()
+	  {
+		 t=timer.duration/100000;
+		 timertext.setText(t.toFixed(2));
+	 }
+	 function updateCounter(){
+	if (player.position.y > 1220) {player.reset(x_reset,y_reset); }
+	else {countdown.destroy(); timertext.destroy();timer.destroy();}
+}
+ }
+ function Point8(){
+	 game.add.image(282, 252, "WPX_MESSAGE").fixedToCamera = true;
+	 wtx=game.add.image(0, 0, "WTX");
+	// wtx.cameraOffset.setTo(0, -180);
+	 wtx.fixedToCamera = true;
+	// tween = game.add.tween(wtx).to( { y: 0 }, 2000, Phaser.Easing.Back.Out, true);
+	 
+	 switchKey++;
+	 game.world.removeChildren(27, 30);
+	 timer.destroy();
+
+	 //ball
+	 var delay = 0;
+	 var group = game.add.group();
+
+	 for (var i = 0; i < 4; i++) {
+	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_b', 'sprite7');
+	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
+	     var speed = game.rnd.between(5000, 7000);
+	     game.add.tween(sprite).to({
+	         y: -256
+	     }, speed, Phaser.Easing.Sinusoidal.InOut, true, delay, 1000, false);
+	     delay += 200;
+	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
+	 }
+
+	 for (var i = 0; i < 4; i++) {
+	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_g', 'sprite7');
+	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
+	     var speed = game.rnd.between(5000, 7000);
+	     game.add.tween(sprite).to({
+	         y: -256
+	     }, speed, Phaser.Easing.Sinusoidal.InOut, true, delay, 1000, false);
+	     delay += 200;
+	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
+	 }
+	 for (var i = 0; i < 4; i++) {
+	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_p', 'sprite7');
+	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
+	     var speed = game.rnd.between(5000, 7000);
+	     game.add.tween(sprite).to({
+	         y: -256
+	     }, speed, Phaser.Easing.Sinusoidal.InOut, true, delay, 1000, false);
+	     delay += 200;
+	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
+	 }
+	 for (var i = 0; i < 4; i++) {
+	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_r', 'sprite7');
+	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
+	     var speed = game.rnd.between(5000, 7000);
+	     game.add.tween(sprite).to({
+	         y: -256
+	     }, speed, Phaser.Easing.Sinusoidal.InOut, true, delay, 1000, false);
+	     delay += 200;
+	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
+
+	 }
+	 for (var i = 0; i < 4; i++) {
+	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_y', 'sprite7');
+	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
+	     var speed = game.rnd.between(5000, 7000);
+	     game.add.tween(sprite).to({
+	         y: -256
+	     }, speed, Phaser.Easing.Sinusoidal.InOut, true, delay, 1000, false);
+	     delay += 200;
+	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
+	 }
+	 group.callAll('animations.add', 'animations', 'swim', frameNames, 7, true, false);
+	 group.callAll('play', null, 'swim');
+ }
+
+
+
+
 function removeBarrier() {
     //na 2 etaj
     if (point1_key == 7) {
