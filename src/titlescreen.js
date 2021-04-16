@@ -1,7 +1,7 @@
 var titleScreen = function (game) {};
 titleScreen.prototype = {
     create: function () {
-		game.sound.play('Synthwave',0.5, true);
+		music = game.sound.play('Synthwave',0.4, true);
         background = game.add.image(0, 0, "title-bg");
         this.title = game.add.image(game.width - 544, 200, "logo");
         this.title.anchor.setTo(0.5);

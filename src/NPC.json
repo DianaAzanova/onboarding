@@ -10,7 +10,9 @@
 			"idle-side":"HR-idle-side",
 			"walk-front":"HR-walk-front",
 			"walk-back":"HR-walk-back",
-			"walk-side":"HR-walk-side"
+			"walk-side":"HR-walk-side",
+			"speakerName":"HR-менеджер",
+			"speakerFrame":0
 		},
 	"2":{
 			"name":"sasha",
@@ -23,7 +25,9 @@
 			"idle-side":"sasha-idle-side",
 			"walk-front":"sasha-walk-front",
 			"walk-back":"sasha-walk-back",
-			"walk-side":"sasha-walk-side"
+			"walk-side":"sasha-walk-side",
+			"speakerName":"Саша",
+			"speakerFrame":1
 		},
 	"3":{
 			"name":"ecologist",
@@ -36,7 +40,9 @@
 			"idle-side":"ecologist-idle-side",
 			"walk-front":"ecologist-walk-front",
 			"walk-back":"ecologist-walk-back",
-			"walk-side":"ecologist-walk-side"
+			"walk-side":"ecologist-walk-side",
+			"speakerName":"Катя",
+			"speakerFrame":3
 		},
 	"4":{
 			"name":"hostess",
@@ -49,6 +55,8 @@
 			"idle-side":"hostess-idle-side",
 			"walk-front":"hostess-walk-front",
 			"walk-back":"hostess-walk-back",
-			"walk-side":"hostess-walk-side"
+			"walk-side":"hostess-walk-side",
+			"speakerName":"Галина",
+			"speakerFrame":2
 		}
 }

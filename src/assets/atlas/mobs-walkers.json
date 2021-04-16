@@ -1,0 +1,3614 @@
+{
+    "frames": [{
+            "filename": "17mob-walk-front-1",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-front-2",
+            "frame": {
+                "x": 104,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-front-3",
+            "frame": {
+                "x": 208,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-front-4",
+            "frame": {
+                "x": 312,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-idle-front",
+            "frame": {
+                "x": 416,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-front-1",
+            "frame": {
+                "x": 520,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-front-2",
+            "frame": {
+                "x": 624,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-front-3",
+            "frame": {
+                "x": 728,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-front-4",
+            "frame": {
+                "x": 832,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-idle-front",
+            "frame": {
+                "x": 936,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-front-1",
+            "frame": {
+                "x": 1040,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-front-2",
+            "frame": {
+                "x": 1144,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-front-3",
+            "frame": {
+                "x": 1248,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-front-4",
+            "frame": {
+                "x": 1352,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-idle-front",
+            "frame": {
+                "x": 1456,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-left-1",
+            "frame": {
+                "x": 0,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-left-2",
+            "frame": {
+                "x": 104,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-left-3",
+            "frame": {
+                "x": 208,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-left-4",
+            "frame": {
+                "x": 312,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-idle-left",
+            "frame": {
+                "x": 416,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-left-1",
+            "frame": {
+                "x": 520,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-left-2",
+            "frame": {
+                "x": 624,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-left-3",
+            "frame": {
+                "x": 728,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-left-4",
+            "frame": {
+                "x": 832,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-idle-left",
+            "frame": {
+                "x": 936,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-left-1",
+            "frame": {
+                "x": 1040,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-left-2",
+            "frame": {
+                "x": 1144,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-left-3",
+            "frame": {
+                "x": 1248,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-left-4",
+            "frame": {
+                "x": 1352,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-idle-left",
+            "frame": {
+                "x": 1456,
+                "y": 144,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-right-1",
+            "frame": {
+                "x": 0,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-right-2",
+            "frame": {
+                "x": 104,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-right-3",
+            "frame": {
+                "x": 208,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-right-4",
+            "frame": {
+                "x": 312,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-idle-right",
+            "frame": {
+                "x": 416,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-right-1",
+            "frame": {
+                "x": 520,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-right-2",
+            "frame": {
+                "x": 624,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-right-3",
+            "frame": {
+                "x": 728,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-right-4",
+            "frame": {
+                "x": 832,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-idle-right",
+            "frame": {
+                "x": 936,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-right-1",
+            "frame": {
+                "x": 1040,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-right-2",
+            "frame": {
+                "x": 1144,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-right-3",
+            "frame": {
+                "x": 1248,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-right-4",
+            "frame": {
+                "x": 1352,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-idle-right",
+            "frame": {
+                "x": 1456,
+                "y": 288,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-back-1",
+            "frame": {
+                "x": 0,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-back-2",
+            "frame": {
+                "x": 104,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-back-3",
+            "frame": {
+                "x": 208,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-walk-back-4",
+            "frame": {
+                "x": 312,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "17mob-idle-back",
+            "frame": {
+                "x": 416,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-back-1",
+            "frame": {
+                "x": 520,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-back-2",
+            "frame": {
+                "x": 624,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-back-3",
+            "frame": {
+                "x": 728,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-walk-back-4",
+            "frame": {
+                "x": 832,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "10mob-idle-back",
+            "frame": {
+                "x": 936,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-back-1",
+            "frame": {
+                "x": 1040,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-back-2",
+            "frame": {
+                "x": 1144,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-back-3",
+            "frame": {
+                "x": 1248,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-walk-back-4",
+            "frame": {
+                "x": 1352,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "14mob-idle-back",
+            "frame": {
+                "x": 1456,
+                "y": 432,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-front-1",
+            "frame": {
+                "x": 0,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-front-2",
+            "frame": {
+                "x": 104,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-front-3",
+            "frame": {
+                "x": 208,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-front-4",
+            "frame": {
+                "x": 312,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-idle-front",
+            "frame": {
+                "x": 416,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-front-1",
+            "frame": {
+                "x": 520,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-front-2",
+            "frame": {
+                "x": 624,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-front-3",
+            "frame": {
+                "x": 728,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-front-4",
+            "frame": {
+                "x": 832,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-idle-front",
+            "frame": {
+                "x": 936,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-front-1",
+            "frame": {
+                "x": 1040,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-front-2",
+            "frame": {
+                "x": 1144,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-front-3",
+            "frame": {
+                "x": 1248,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-front-4",
+            "frame": {
+                "x": 1352,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-idle-front",
+            "frame": {
+                "x": 1456,
+                "y": 576,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-left-1",
+            "frame": {
+                "x": 0,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-left-2",
+            "frame": {
+                "x": 104,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-left-3",
+            "frame": {
+                "x": 208,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-left-4",
+            "frame": {
+                "x": 312,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-idle-left",
+            "frame": {
+                "x": 416,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-left-1",
+            "frame": {
+                "x": 520,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-left-2",
+            "frame": {
+                "x": 624,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-left-3",
+            "frame": {
+                "x": 728,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-left-4",
+            "frame": {
+                "x": 832,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-idle-left",
+            "frame": {
+                "x": 936,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-left-1",
+            "frame": {
+                "x": 1040,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-left-2",
+            "frame": {
+                "x": 1144,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-left-3",
+            "frame": {
+                "x": 1248,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-left-4",
+            "frame": {
+                "x": 1352,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-idle-left",
+            "frame": {
+                "x": 1456,
+                "y": 720,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-right-1",
+            "frame": {
+                "x": 0,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-right-2",
+            "frame": {
+                "x": 104,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-right-3",
+            "frame": {
+                "x": 208,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-right-4",
+            "frame": {
+                "x": 312,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-idle-right",
+            "frame": {
+                "x": 416,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-right-1",
+            "frame": {
+                "x": 520,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-right-2",
+            "frame": {
+                "x": 624,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-right-3",
+            "frame": {
+                "x": 728,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-right-4",
+            "frame": {
+                "x": 832,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-idle-right",
+            "frame": {
+                "x": 936,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-right-1",
+            "frame": {
+                "x": 1040,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-right-2",
+            "frame": {
+                "x": 1144,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-right-3",
+            "frame": {
+                "x": 1248,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-right-4",
+            "frame": {
+                "x": 1352,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-idle-right",
+            "frame": {
+                "x": 1456,
+                "y": 864,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-back-1",
+            "frame": {
+                "x": 0,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-back-2",
+            "frame": {
+                "x": 104,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-back-3",
+            "frame": {
+                "x": 208,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-walk-back-4",
+            "frame": {
+                "x": 312,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "3mob-idle-back",
+            "frame": {
+                "x": 416,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-back-1",
+            "frame": {
+                "x": 520,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-back-2",
+            "frame": {
+                "x": 624,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-back-3",
+            "frame": {
+                "x": 728,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-walk-back-4",
+            "frame": {
+                "x": 832,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "4mob-idle-back",
+            "frame": {
+                "x": 936,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-back-1",
+            "frame": {
+                "x": 1040,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-back-2",
+            "frame": {
+                "x": 1144,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-back-3",
+            "frame": {
+                "x": 1248,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-walk-back-4",
+            "frame": {
+                "x": 1352,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "21mob-idle-back",
+            "frame": {
+                "x": 1456,
+                "y": 1008,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-front-1",
+            "frame": {
+                "x": 0,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-front-2",
+            "frame": {
+                "x": 104,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-front-3",
+            "frame": {
+                "x": 208,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-front-4",
+            "frame": {
+                "x": 312,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-idle-front",
+            "frame": {
+                "x": 416,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-front-1",
+            "frame": {
+                "x": 520,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-front-2",
+            "frame": {
+                "x": 624,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-front-3",
+            "frame": {
+                "x": 728,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-front-4",
+            "frame": {
+                "x": 832,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-idle-front",
+            "frame": {
+                "x": 936,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-front-1",
+            "frame": {
+                "x": 1040,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-front-2",
+            "frame": {
+                "x": 1144,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-front-3",
+            "frame": {
+                "x": 1248,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-front-4",
+            "frame": {
+                "x": 1352,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-idle-front",
+            "frame": {
+                "x": 1456,
+                "y": 1152,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-right-1",
+            "frame": {
+                "x": 0,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-right-2",
+            "frame": {
+                "x": 104,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-right-3",
+            "frame": {
+                "x": 208,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-right-4",
+            "frame": {
+                "x": 312,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-idle-right",
+            "frame": {
+                "x": 416,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-right-1",
+            "frame": {
+                "x": 520,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-right-2",
+            "frame": {
+                "x": 624,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-right-3",
+            "frame": {
+                "x": 728,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-right-4",
+            "frame": {
+                "x": 832,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-idle-right",
+            "frame": {
+                "x": 936,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-right-1",
+            "frame": {
+                "x": 1040,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-right-2",
+            "frame": {
+                "x": 1144,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-right-3",
+            "frame": {
+                "x": 1248,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-right-4",
+            "frame": {
+                "x": 1352,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-idle-right",
+            "frame": {
+                "x": 1456,
+                "y": 1296,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-left-1",
+            "frame": {
+                "x": 0,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-left-2",
+            "frame": {
+                "x": 104,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-left-3",
+            "frame": {
+                "x": 208,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-left-4",
+            "frame": {
+                "x": 312,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-idle-left",
+            "frame": {
+                "x": 416,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-left-1",
+            "frame": {
+                "x": 520,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-left-2",
+            "frame": {
+                "x": 624,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-left-3",
+            "frame": {
+                "x": 728,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-left-4",
+            "frame": {
+                "x": 832,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-idle-left",
+            "frame": {
+                "x": 936,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-left-1",
+            "frame": {
+                "x": 1040,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-left-2",
+            "frame": {
+                "x": 1144,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-left-3",
+            "frame": {
+                "x": 1248,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-left-4",
+            "frame": {
+                "x": 1352,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-idle-left",
+            "frame": {
+                "x": 1456,
+                "y": 1440,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-back-1",
+            "frame": {
+                "x": 0,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-back-2",
+            "frame": {
+                "x": 104,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-back-3",
+            "frame": {
+                "x": 208,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-walk-back-4",
+            "frame": {
+                "x": 312,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "6mob-idle-back",
+            "frame": {
+                "x": 416,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-back-1",
+            "frame": {
+                "x": 520,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-back-2",
+            "frame": {
+                "x": 624,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-back-3",
+            "frame": {
+                "x": 728,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-walk-back-4",
+            "frame": {
+                "x": 832,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "7mob-idle-back",
+            "frame": {
+                "x": 936,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-back-1",
+            "frame": {
+                "x": 1040,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-back-2",
+            "frame": {
+                "x": 1144,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-back-3",
+            "frame": {
+                "x": 1248,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-walk-back-4",
+            "frame": {
+                "x": 1352,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }, {
+            "filename": "13mob-idle-back",
+            "frame": {
+                "x": 1456,
+                "y": 1584,
+                "w": 104,
+                "h": 144
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 144
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 144
+            }
+        }
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "spritesheet.png",
+        "size": {
+            "w": 1560,
+            "h": 1728
+        },
+        "scale": 1
+    }
+}

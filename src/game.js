@@ -5,9 +5,10 @@ playGame.prototype = {
         this.createGroundLevel();
         this.createObjectLevel();
         this.createNpc();
+		this.createInventory();
         this.createPlayer(8.5, 95);
         this.createForeground();
-        this.createInventory();
+		this.createMobs();
         this.bindKeys();
         this.createCamera();
     },
@@ -67,30 +68,40 @@ playGame.prototype = {
     createInventory: function () {
         chewbacca = game.add.image(704, 4228, "chewbacca");
         chewbacca.inputEnabled = true;
-        chewbacca.input.useHandCursor = true;
+		chewbacca.input.useHandCursor = true;
+		
+		air_hockey = game.add.image(180, 304, "air_hockey");
+		puck = game.add.image(200, 320, "puck");
+		game.add.tween(puck).to({ x: 300, y: 342 }, 1100, 'Circ', true, 0, -1, true);
+		
 		
 		welcomePack = game.add.physicsGroup();
-		game.add.sprite(224, 664, 'pen', 0, welcomePack).events.onKilled.add(checkmark, this);
-		game.add.sprite(388, 5436, 'notepad', 0, welcomePack).events.onKilled.add(checkmark, this);
-		game.add.sprite(921, 2710, 'pack', 0, welcomePack).events.onKilled.add(checkmark, this);
-		game.add.sprite(377, 5953, 'cup', 0, welcomePack).events.onKilled.add(checkmark, this);
-		game.add.sprite(880, 1564, 'pillow', 0, welcomePack).events.onKilled.add(checkmark, this);
+		pen = game.add.sprite(76, 3740, 'pen', 0, welcomePack);
+		pen.events.onKilled.addOnce(checkmark, this);
+		pen.bringToTop();
+		game.add.sprite(386, 5455, 'notepad', 0, welcomePack).events.onKilled.addOnce(checkmark, this);
+		game.add.sprite(921, 2710, 'pack', 0, welcomePack).events.onKilled.addOnce(checkmark, this);
+		cup = game.add.sprite(396, 5975, 'cup', 0, welcomePack);
+		cup.events.onKilled.addOnce(checkmark, this);
+		cup.bringToTop();
+		game.add.sprite(880, 1564, 'pillow', 0, welcomePack).events.onKilled.addOnce(checkmark, this);
 		welcomePack.setAll("body.enable", false);
 		
         BookGlowGroup = game.add.group();
         game.add.sprite(108, 3224, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'thealliance', 293);
         game.add.sprite(316, 3224, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'vremyaigr', 285);
         game.add.sprite(316, 3272, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'igravcifri', 293);
-        game.add.sprite(160, 3272, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book', 285);
-        game.add.sprite(196, 3240, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book2', 285);
-        game.add.sprite(232, 3272, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book', 285);
-        game.add.sprite(248, 3212, 'book_glow4', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book2', 285);
-        game.add.sprite(88, 3256, 'book_glow5', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book', 285);
-        game.add.sprite(148, 3224, 'book_glow6', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'book2', 285);
+        game.add.sprite(160, 3272, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'kojima', 285);
+        game.add.sprite(196, 3240, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'hey_listen', 285);
+        game.add.sprite(232, 3272, 'book_glow', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'business', 285);
+        game.add.sprite(248, 3212, 'book_glow4', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, '1_track', 285);
+        game.add.sprite(88, 3256, 'book_glow5', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'loves', 285);
+        game.add.sprite(148, 3224, 'book_glow6', 0, BookGlowGroup).events.onInputUp.add(selectBook, this, 0, 'minecraft', 285);
 
         BookGlowGroup.setAll("inputEnabled", true);
         BookGlowGroup.setAll("input.useHandCursor", true);
         BookGlowGroup.setAll("alpha", 0);
+		BookGlowGroup.getTop();
         //BookGlowGroup.onChildInputUp.add(selectBook, this, 0,);
 		
 		const getSetAlphaCallback = (character, alpha) => () => {
@@ -106,6 +117,19 @@ playGame.prototype = {
         var temp = new Player(game, x, y, atlas, startframe);
         game.add.existing(temp);
     },
+	
+	   createMobs: function (mob_x, mob_y) {
+		 group_mob = game.add.physicsGroup();
+		group_mob_walkers = game.add.physicsGroup();
+        mobs_db = game.cache.getJSON('mobsDB');
+		for (id_mob = 0; id_mob <= 11; id_mob++) {
+            var temp = new Mobs(game, id_mob, mob_x, mob_y);
+        }
+        for (id_mob = 12; id_mob <= 20; id_mob++) {
+            var temp = new MobsWalkers(game, id_mob, mob_x, mob_y);
+        }
+	 
+    },
 
     update: function () {
         game.physics.arcade.collide(player, this.layer_collisions);
@@ -113,14 +137,18 @@ playGame.prototype = {
         game.physics.arcade.collide(player, npc_sasha);
         game.physics.arcade.collide(player, npc_ecologist);
         game.physics.arcade.collide(player, npc_hostess);
+		game.physics.arcade.collide(player, group_mob_walkers);
 		game.physics.arcade.collide(player, welcomePack, this.collectWelcomePack);
         this.movePlayer();
+		
     },
 	collectWelcomePack: function (player, welcomePack) {
+		collectWP = game.add.audio('collectWP');
+		collectWP.play();
 		welcomePack.kill();
   },
     movePlayer: function () {
-        var vel = 300;
+        var vel = 400;
         // capture input
         if (this.wasd.down.isDown) {
             player_state = PLAYER_STATE.WALKING_DOWN;
@@ -242,21 +270,21 @@ NPC = function (game, id_npc, position_x, position_y, atlas, startframe) {
 
     if (this.type == "npc-sasha") {
         npc_sasha = this;
-        npc_sasha.events.onInputUp.add(Point4, npc_sasha);
+        npc_sasha.events.onInputUp.addOnce(Point4, npc_sasha);
         npc_sasha.addChild(game.add.sprite(-7, -85, "questimg"));
     }
 
     if (this.type == "npc-ecologist") {
         npc_ecologist = this;
-        npc_ecologist.events.onInputUp.add(Point5, npc_ecologist);
+        npc_ecologist.events.onInputUp.addOnce(Point5, npc_ecologist);
         npc_ecologist.addChild(game.add.sprite(-7, -85, "questimg"));
     }
     if (this.type == "npc-hostess") {
         npc_hostess = this;
-		npc_hostess.events.onInputUp.add(Point6, npc_hostess);
+		npc_hostess.events.onInputUp.addOnce(Point6, npc_hostess);
         npc_hostess.addChild(game.add.sprite(-7, -85, "questimg"));
     }
-
+	
     this.animations.add('idle-front', [name + '-idle-front'], 0, true);
     this.animations.add('idle-back', [name + '-idle-back'], 0, true);
     this.animations.add('idle-side', [name + '-idle-side'], 0, true);
@@ -289,6 +317,7 @@ NPC = function (game, id_npc, position_x, position_y, atlas, startframe) {
     }
 
 }
+
 NPC.prototype = Object.create(Phaser.Sprite.prototype);
 NPC.prototype.constructor = NPC;
 NPC.prototype.update = function () {
@@ -316,29 +345,45 @@ NPC.prototype.update = function () {
 
 var i = 0;
 dialogbuttons = [];
-dialogbuttons[0] = {
-    name: "nextbutton",
+dialogbuttons[0] = { 
     x: 931,
     y: 560,
+	Frame: "nextbutton",
 }
 dialogbuttons[1] = {
-    name: "okbutton",
     x: 975,
     y: 560,
+	Frame:"okbutton",
 }
+
+
 var groupDialogWin;
-function DialogWin(content, i, dialogbuttons) {
-    //content = game.cache.getJSON('dialogues');
+function DialogWin(content, i, dialogbuttons, npc_id) {
+	
     groupDialogWin = game.add.group();
-    dialogframe = game.add.image(0, 448, "dialogframe");
+	//if (groupDialogWin.children.length > 0) {groupDialogWin.destroy();}
+	groupDialogWin.name = "dialog";
+    dialogframe = game.add.image(0, 432, "dialogframe");
     dialogframe.fixedToCamera = true;
     dialogtext = game.add.bitmapText(50, 490, "pixel_font", content, 24);
     dialogtext.lineSpacing = -7;
     dialogtext.fixedToCamera = true;
-    nextbutton = game.add.button(dialogbuttons.x, dialogbuttons.y, dialogbuttons.name);
+	speakerName = game.add.bitmapText(320, 445, "pixel_font", npc_db[npc_id].speakerName, 20);
+	speakerFrame = game.add.image(37, 228, "speaker", npc_db[npc_id].speakerFrame);
+    nextbutton = game.add.button(dialogbuttons.x, dialogbuttons.y, dialogbuttons.Frame, null, null, 1, 0);
+	click = game.add.audio('click');
+	nextbutton.setDownSound(click);
     nextbutton.fixedToCamera = true;
-
-    groupDialogWin.addMultiple([dialogframe, dialogtext, nextbutton]);
+	speakerFrame.fixedToCamera = true;
+	speakerName.fixedToCamera = true;
+	
+	groupDialogWin.addMultiple([dialogframe, dialogtext, nextbutton, speakerName, speakerFrame]);
+	
+	//nextbutton.forceOut=true;
+/* 	nextbutton.update=function(){
+	game.world.removeChild(groupDialogWin);
+} */
+//game.world.onChildInputUp.add(destroyGroupDialogWin);
 }
 
 var switchKey = 1;
@@ -346,9 +391,10 @@ var keyAutoDialog = 1;
 function autoHRdialog(x, y, content, keyAutoDialog) {
     var distance = game.physics.arcade.distanceToXY(player, x, y);
     if (npc_HR.position.x == x && distance < 110 && switchKey == keyAutoDialog) {
-        DialogWin(content, i, dialogbuttons[1]);
+        DialogWin(content, i, dialogbuttons[1], 1);
         if (keyAutoDialog == 1 || keyAutoDialog == 3 || keyAutoDialog == 4) {
-            nextbutton.onInputUp.add(destroyGroupDialogWin, this);
+            nextbutton.onInputUp.add(destroyGroupDialogWin, nextbutton);
+			
         }
         if (keyAutoDialog == 2) {
             nextbutton.loadTexture("nextbutton");
@@ -362,25 +408,31 @@ function autoHRdialog(x, y, content, keyAutoDialog) {
 	}
 }
 function destroyGroupDialogWin() {
-    groupDialogWin.removeChildren();
+   // groupDialogWin.removeChildren();
+	//game.world.removeChildAt(37);
+	groupDialogWin.destroy(true);
+	
 }
 
 var point1_key = 1;
 var Point1 = function () {
-
+if (point1_key == 1){
     npc_HR.removeChildren(0, 4);
+	dialogs = game.add.audio('dialog');
+	dialogs.play();
+}
     content = game.cache.getJSON('dialogues');
-    DialogWin(content.point_1[point1_key], point1_key, dialogbuttons[0]);
-    nextbutton.onInputUp.add(updateTextPoint1, this);
+    DialogWin(content.point_1[point1_key], point1_key, dialogbuttons[0], 1);
+    nextbutton.onInputUp.add(updateTextPoint1, nextbutton);
     if (point1_key == 3) {
         dialogtext.fontSize = 19;
     }
     if (point1_key == 5) {
-        nextbutton.loadTexture(dialogbuttons[1].name);
+        nextbutton.loadTexture(dialogbuttons[1].Frame);
         nextbutton.cameraOffset.setTo(dialogbuttons[1].x, dialogbuttons[1].y);
     }
     if (point1_key == 6) {
-        groupDialogWin.removeChildren();
+        destroyGroupDialogWin();
         point1_key++;
         removeBarrier();
         HRmove();
@@ -388,56 +440,67 @@ var Point1 = function () {
 }
 
 function updateTextPoint1() {
-    groupDialogWin.removeChildren();
+    destroyGroupDialogWin();
     point1_key++;
     Point1();
 }
 var point2_key = 2;
+ 
 function Point2() {
-    if (point2_key == 2 || point2_key == 8) {
-        chewbacca.events.onInputUp.add(mission, this);
-    }
+   
+   chewbacca.events.onInputUp.add(mission, this);
+   //game.world.children[37].pendingDestroy=true;
+   
     function mission() {
+		//game.world.removeChildAt(37);
+		dialogs = game.add.audio('dialog');
+		dialogs.play();
+		groupDialogWin.destroy();
 
-        DialogWin(content.point_2[2], i, dialogbuttons[0]);
+        DialogWin(content.point_2[2], i, dialogbuttons[0], 1);
         dialogframe.loadTexture("mission");
         dialogframe.cameraOffset.setTo(320, 96);
+		groupDialogWin.name = "mission";
+		speakerFrame.destroy();
+		speakerName.destroy();
 
         missiontext = game.add.bitmapText(470, 140, "pixel_font", "МИССИЯ", 30);
         missiontext.fixedToCamera = true;
+		groupDialogWin.addChild(missiontext);
 
         dialogtext.align = "center";
         dialogtext.cameraOffset.setTo(364, 190);
 
         nextbutton.cameraOffset.setTo(490, 460);
-        nextbutton.onInputUp.add(updateText, this);
+        nextbutton.onInputUp.add(updateText, nextbutton);
         point2_key++;
 
         function updateText() {
             content = game.cache.getJSON('dialogues');
             if (point2_key == 3 || point2_key == 9 || point2_key == 10) {
                 dialogtext.fontSize = 17;
-                nextbutton.onInputUp.add(updateText, this);
+                nextbutton.onInputUp.add(updateText, nextbutton);
             }
             if (point2_key == 4 || point2_key == 11) {
                 dialogtext.fontSize = 20;
-                nextbutton.loadTexture(dialogbuttons[1].name);
+                nextbutton.loadTexture(dialogbuttons[1].Frame);
                 nextbutton.cameraOffset.setTo(512, 460);
-                nextbutton.onInputUp.add(closemission, this);
+                nextbutton.onInputUp.add(closemission, nextbutton);
             }
             dialogtext.text = content.point_2[point2_key];
             point2_key++;
         }
     }
     function closemission() {
-        groupDialogWin.removeChildren();
+		//point2_key++;
+        destroyGroupDialogWin();
         missiontext.destroy();
-        DialogWin(content.point_2[5], i, dialogbuttons[1]);
-        nextbutton.onInputUp.addOnce(toPoint3, this);
+        DialogWin(content.point_2[5], i, dialogbuttons[1], 1);
+        nextbutton.onInputUp.add(toPoint3, nextbutton);
     }
     function toPoint3() {
         point2_key++;
-        groupDialogWin.removeChildren();
+        destroyGroupDialogWin();
         removeBarrier();
         HRmove();
     }
@@ -448,7 +511,7 @@ var point3_key = 1;
 function Point3() {
     if (point3_key == 1) {
         dialogtext.text = content.point_3[2];
-        nextbutton.onInputUp.addOnce(questBooks, this);
+        nextbutton.onInputUp.addOnce(questBooks, nextbutton);
     }
 }
     function questBooks() {
@@ -456,7 +519,7 @@ function Point3() {
         dialogtext.text = content.point_3[3];
         nextbutton.loadTexture("okbutton");
         nextbutton.cameraOffset.setTo(975, 560);
-        nextbutton.onInputUp.addOnce(destroyGroupDialogWin, this);
+        nextbutton.onInputUp.add(destroyGroupDialogWin, nextbutton);
         // счетчик
         counterFrame = game.add.image(0, 0, "counter0");
         counterFrame.fixedToCamera = true;
@@ -470,15 +533,17 @@ var checkVremyaIgr = 0;
 var checkIgravCifri = 0;
 
 function selectBook(a, b, c, coverBook, bookY) {
+	bookOpen = game.add.audio('bookOpen');
+	bookOpen.play();
     book = game.add.image(561, bookY, coverBook);
     book.fixedToCamera = true;
     book.anchor.setTo(0.5, 0.5);
-    continueButton = game.add.button(396, 530, "continue_b");
+    continueButton = game.add.button(396, 530, "continue_b", null, null, 1, 0);
     continueButton.fixedToCamera = true;
-    continueButton.onInputUp.add(destroyBook, this);
-    selectButton = game.add.button(560, 538, "select_b");
+    continueButton.onInputUp.add(destroyBook, continueButton);
+    selectButton = game.add.button(560, 538, "select_b", null, null, 1, 0);
     selectButton.fixedToCamera = true;
-    selectButton.onInputUp.add(BookSelectionAnimation, this);
+    selectButton.onInputUp.add(BookSelectionAnimation, selectButton);
 
     if (book.key == "thealliance" && checkTheAlliance == 1) {
         selectButton.destroy();
@@ -497,6 +562,8 @@ function selectBook(a, b, c, coverBook, bookY) {
 
 function BookSelectionAnimation() {
     if (book.key == "thealliance" || book.key == "vremyaigr" || book.key == "igravcifri") {
+		truth = game.add.audio('true');
+		truth.play();
         tween = game.add.tween(book.scale).to({
             x: 1.2,
             y: 1.2
@@ -514,6 +581,8 @@ function BookSelectionAnimation() {
             checkIgravCifri = 1;
         }
     } else {
+		error = game.add.audio('error');
+		error.play();
         game.add.tween(book.cameraOffset).to({
             x: book.cameraOffset.x - 20
         }, 100, Phaser.Easing.Bounce.InOut, true, 0, 3, true);
@@ -523,14 +592,17 @@ function updateCounterBook() {
     if (counterBook == 1) {
         counterFrame.loadTexture("counter1");
         counterText.text = "1/3";
+		point3_key++;
     }
     if (counterBook == 2) {
         counterFrame.loadTexture("counter2");
         counterText.text = "2/3";
+		point3_key++;
     }
     if (counterBook == 3) {
         counterFrame.loadTexture("counter3");
         counterText.text = "3/3";
+		point3_key++;
         timer = game.time.create();
         timer.add(3000, toPoint4, this);
         timer.start();
@@ -546,38 +618,49 @@ function toPoint4() {
 }
 
 function destroyBook() {
+	bookClose = game.add.audio('bookClose');
+	bookClose.play();
     book.destroy();
     continueButton.destroy();
     selectButton.destroy();
 }
 var point4_key = 1;
-var Point4 = function () {
+var Point4 = function (npc_id) {
     npc_sasha.removeChildren(0, 4);
+	dialogs = game.add.audio('dialog');
+	dialogs.play();
     content = game.cache.getJSON('dialogues');
-    DialogWin(content.point_4[2], i, dialogbuttons[1]);
+    DialogWin(content.point_4[2], i, dialogbuttons[1], 2);
     dialogtext.fontSize = 18;
+	speakerName.cameraOffset.x = 368;
     nextbutton.onInputUp.add(hrText, this);
     point4_key++;
 
     function hrText() {
         dialogtext.fontSize = 24;
         dialogtext.text = content.point_4[3];
+		speakerFrame.loadTexture("speaker", 0);
+		speakerName.cameraOffset.x = 320;
+		speakerName.text = npc_db[1].speakerName;
         nextbutton.loadTexture("okbutton");
         nextbutton.cameraOffset.setTo(975, 560);
         nextbutton.onInputUp.add(toPoint5, this);
     }
     function toPoint5() {
-        groupDialogWin.removeChildren();
+        destroyGroupDialogWin();
         removeBarrier();
         HRmove();
     }
 }
 
 var point5_key = 2;
-var Point5 = function () {
+var Point5 = function (npc_id) {
     npc_ecologist.removeChildren(0, 4);
+	dialogs = game.add.audio('dialog');
+	dialogs.play();
     content = game.cache.getJSON('dialogues');
-    DialogWin(content.point_5[2], i, dialogbuttons[0]);
+    DialogWin(content.point_5[2], i, dialogbuttons[0], 3);
+	speakerName.cameraOffset.x = 372;
 	point5_key++;
     nextbutton.onInputUp.add(updateText, this);
     
@@ -590,6 +673,9 @@ var Point5 = function () {
 		dialogtext.fontSize = 22;
 		}
 		if (point5_key == 6){
+		speakerFrame.loadTexture("speaker", 0);
+		speakerName.text = npc_db[1].speakerName;
+		speakerName.cameraOffset.x = 320;
 		dialogtext.text = content.point_5[5];
         nextbutton.loadTexture("okbutton");
         nextbutton.cameraOffset.setTo(975, 560);
@@ -597,40 +683,51 @@ var Point5 = function () {
 		}
 		 
 	}
+
+
 }
 	 function toPoint6() {
-        groupDialogWin.removeChildren();
+        destroyGroupDialogWin();
         HRmove();
     }
   
-var Point6 = function () {
+var Point6 = function (npc_id) {
     npc_hostess.removeChildren(0, 4);
+	dialogs = game.add.audio('dialog');
+	dialogs.play();
     content = game.cache.getJSON('dialogues');
-    DialogWin(content.point_6[1], i, dialogbuttons[1]);
+    DialogWin(content.point_6[1], i, dialogbuttons[1], 4);
     dialogtext.fontSize = 20;
+	speakerName.cameraOffset.x = 360;
     nextbutton.onInputUp.add(questWelcomePack, this);
     counter_wp = game.add.image(0, 0, "counter_wp");
 		counter_wp.fixedToCamera = true;
 
     function questWelcomePack() {
         welcomePack.setAll("body.enable", true);
-        groupDialogWin.removeChildren();
+        destroyGroupDialogWin();
+		//
+		welcomePack.children[0].addChild(game.add.sprite(-4, -4, "pen_glow"));
+		welcomePack.children[1].addChild(game.add.sprite(-4, -16, "notepad_glow"));
+		welcomePack.children[2].addChild(game.add.sprite(-9, -8, "pack_glow"));
+		welcomePack.children[3].addChild(game.add.sprite(-12, -16, "cup_glow"));
+		welcomePack.children[4].addChild(game.add.sprite(-4, -4, "pillow_glow"));
     }
 }
 function checkmark() {
-    if (welcomePack.children[0].alive == false) {
+    if (welcomePack.children[4].alive == false) {
         game.add.sprite(43, 51, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[1].alive == false) {
         game.add.sprite(43, 135, 'done_wp').fixedToCamera = true;
     }
-    if (welcomePack.children[2].alive == false) {
+    if (welcomePack.children[0].alive == false) {
         game.add.sprite(43, 107, 'done_wp').fixedToCamera = true;
     }
     if (welcomePack.children[3].alive == false) {
         game.add.sprite(43, 163, 'done_wp').fixedToCamera = true;
     }
-    if (welcomePack.children[4].alive == false) {
+    if (welcomePack.children[2].alive == false) {
         game.add.sprite(43, 79, 'done_wp').fixedToCamera = true;
     }
 	if (welcomePack.checkAll("alive",false)){Point7()}
@@ -638,7 +735,7 @@ function checkmark() {
 var timer;
 var point7_key = 1;
  function Point7(){
-	 game.world.removeChildren(28,45); // удаляет счетчик wp
+	game.world.removeChildren(18,game.world.children.length); // удаляет счетчик wp
 	message = game.add.image(296, 142, "message");
 	message.fixedToCamera = true;
 	okbutton = game.add.button(512, 308, "okbutton");
@@ -650,12 +747,32 @@ var point7_key = 1;
 	timertext.fixedToCamera = true;
 	//коробки пиццы
 	game.add.image(313, 736, "pizza");
-	game.add.image(835, 592, "pizza");
-	
 	game.add.image(263, 727, "pizza").scale.x=-1;
 	game.add.image(338, 663, "pizza").scale.x=-1;
 	game.add.image(769, 602, "pizza").scale.x=-1;
 	game.add.image(850, 401, "pizza").scale.x=-1;
+	
+	//mobs
+	group_mob_walkers.removeChildren();
+	group_mob.removeChildren(); 
+	npc_sasha.reset(379, 626);
+	
+	//цикл создания мобов и мобов ходящих
+	
+	for (id_mob = 0; id_mob <= 11; id_mob++) {
+		var name = mobs_db[id_mob].name;
+	var end_x = mobs_db[id_mob].end_x;
+	var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs", name + "-front");
+        }
+    for (id_mob = 12; id_mob <= 20; id_mob++) {
+		var name = mobs_db[id_mob].name;
+	var end_x = mobs_db[id_mob].end_x;
+	var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs-walkers", name + "-idle-front");
+        }
+	
+	
  }
  function startRun(){
 	 message.destroy();
@@ -665,26 +782,33 @@ var point7_key = 1;
 	 timer = game.time.create(false);
 	 timer.loop(Phaser.Timer.MINUTE, updateCounter, this);
 	 timer.start();
+	 music.volume = 0.03;
+	 tick_tock = game.add.audio('tick_tock');
+	 tick_tock.loop = true;
+	 tick_tock.play();
 	 point7_key++;
 	 timertext.update = function()
 	  {
-		 t=timer.duration/100000;
+		 t = timer.duration/100000;
 		 timertext.setText(t.toFixed(2));
 	 }
 	 function updateCounter(){
-	if (player.position.y > 1220) {player.reset(x_reset,y_reset); }
-	else {countdown.destroy(); timertext.destroy();timer.destroy();}
+	if (player.position.y > 1220) {
+		resetSound = game.add.audio('reset');
+		resetSound.play();
+		player.reset(x_reset,y_reset);
+		}
+	else {countdown.destroy(); timertext.destroy(); timer.destroy(); tick_tock.stop();}
 }
  }
  function Point8(){
-	 game.add.image(282, 252, "WPX_MESSAGE").fixedToCamera = true;
-	 wtx=game.add.image(0, 0, "WTX");
-	// wtx.cameraOffset.setTo(0, -180);
-	 wtx.fixedToCamera = true;
-	// tween = game.add.tween(wtx).to( { y: 0 }, 2000, Phaser.Easing.Back.Out, true);
-	 
+	 tick_tock.stop();
+	 victory = game.add.audio('victory');
+	 victory.play();
+	 music.volume = 0.4;
 	 switchKey++;
-	 game.world.removeChildren(27, 30);
+	 game.world.removeChildAt(10);
+	 game.world.removeChildren(17, 19);
 	 timer.destroy();
 
 	 //ball
@@ -692,7 +816,7 @@ var point7_key = 1;
 	 var group = game.add.group();
 
 	 for (var i = 0; i < 4; i++) {
-	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_b', 'sprite7');
+	     var sprite = group.create(-100 + (game.world.randomX), 1300, 'ball_b', 'sprite7');
 	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
 	     var speed = game.rnd.between(5000, 7000);
 	     game.add.tween(sprite).to({
@@ -703,7 +827,7 @@ var point7_key = 1;
 	 }
 
 	 for (var i = 0; i < 4; i++) {
-	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_g', 'sprite7');
+	     var sprite = group.create(-100 + (game.world.randomX), 1500, 'ball_g', 'sprite7');
 	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
 	     var speed = game.rnd.between(5000, 7000);
 	     game.add.tween(sprite).to({
@@ -713,7 +837,7 @@ var point7_key = 1;
 	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
 	 }
 	 for (var i = 0; i < 4; i++) {
-	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_p', 'sprite7');
+	     var sprite = group.create(-100 + (game.world.randomX), 1200, 'ball_p', 'sprite7');
 	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
 	     var speed = game.rnd.between(5000, 7000);
 	     game.add.tween(sprite).to({
@@ -723,7 +847,7 @@ var point7_key = 1;
 	     var frameNames = Phaser.Animation.generateFrameNames('sprite', 7, 11);
 	 }
 	 for (var i = 0; i < 4; i++) {
-	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_r', 'sprite7');
+	     var sprite = group.create(-100 + (game.world.randomX), 1300, 'ball_r', 'sprite7');
 	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
 	     var speed = game.rnd.between(5000, 7000);
 	     game.add.tween(sprite).to({
@@ -734,7 +858,7 @@ var point7_key = 1;
 
 	 }
 	 for (var i = 0; i < 4; i++) {
-	     var sprite = group.create(-100 + (game.world.randomX), 1000, 'ball_y', 'sprite7');
+	     var sprite = group.create(-100 + (game.world.randomX), 1400, 'ball_y', 'sprite7');
 	     sprite.scale.set(game.rnd.realInRange(0.6, 1));
 	     var speed = game.rnd.between(5000, 7000);
 	     game.add.tween(sprite).to({
@@ -745,6 +869,12 @@ var point7_key = 1;
 	 }
 	 group.callAll('animations.add', 'animations', 'swim', frameNames, 7, true, false);
 	 group.callAll('play', null, 'swim');
+	 
+	 game.add.image(282, 252, "WPX_MESSAGE").fixedToCamera = true;
+	 wtx=game.add.image(0, 0, "WTX");
+//	 wtx.cameraOffset.setTo(0, 0);
+	 wtx.fixedToCamera = true;
+	// tween = game.add.tween(wtx).to( { y: 0 }, 2000, Phaser.Easing.Back.Out, true);
  }
 
 
@@ -762,7 +892,7 @@ function removeBarrier() {
         globalMap.removeTile(5, 66, "Collisions");
         globalMap.removeTile(6, 66, "Collisions");
     }
-    if (point3_key == 2) {
+    if (point3_key == 5) {
         globalMap.removeTile(1, 41, "Collisions");
         globalMap.removeTile(2, 41, "Collisions");
         globalMap.removeTile(3, 41, "Collisions");
@@ -826,7 +956,7 @@ function HRmove() {
         point2_key = 8;
     }
     // к Саше
-    if (point3_key == 2) {
+    if (point3_key == 5) {
         point3tween1 = game.add.tween(npc_HR).to({
             x: 416,
             y: 3008

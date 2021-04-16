@@ -5,8 +5,13 @@ gameHeight = 640,
 globalMap,
 hero,
 heroine,
+music,
 npc,
 npc_db,
+mobs_db,
+id_mob,
+mob_walkers,
+mob,
 id_npc,
 content,
 npc_HR,
@@ -16,6 +21,8 @@ npc_hostess,
 distance,
 groupGlow,
 welcomePack,
+group_mob_walkers,
+group_mob,
 chewbacca,
 counter,
 updateCounter,
@@ -73,16 +80,16 @@ preload.prototype = {
         // atlas
         game.load.atlasJSONArray("personages", "assets/atlas/chars.png", "assets/atlas/chars.json");
         game.load.atlasJSONArray("glow", "assets/atlas/glow_NPC.png", "assets/atlas/glow_NPC.json");
-        game.load.image("glowHR", "assets/atlas/glow_HR.png");
         // json
         game.load.json('npc', 'NPC.json');
+		game.load.json('mobsDB', 'mobsDB.json');
         game.load.json('dialogues', 'dialogues.json');
         //font
         game.load.bitmapFont('pixel_font', 'assets/fonts/pixel_font.png', 'assets/fonts/pixel_font.xml');
         //elements
         game.load.image('dialogframe', 'assets/sprites/dialog.png');
-        game.load.image("nextbutton", "assets/sprites/next.png");
-        game.load.image("okbutton", "assets/sprites/ok.png");
+		game.load.spritesheet('nextbutton', 'assets/sprites/nextbutton.png', 108, 36);
+		game.load.spritesheet('okbutton', 'assets/sprites/okbutton.png', 64, 40);
         game.load.image("questimg", "assets/sprites/quest.png");
         game.load.image("chewbacca", "assets/sprites/chewbacca.png");
         game.load.image("mission", "assets/sprites/mission.png");
@@ -91,8 +98,8 @@ preload.prototype = {
         game.load.image("book_glow5", "assets/sprites/5.png");
         game.load.image("book_glow6", "assets/sprites/6.png");
         game.load.image("igravcifri", "assets/sprites/igravcifri.png");
-        game.load.image("select_b", "assets/sprites/select_b.png");
-        game.load.image("continue_b", "assets/sprites/continue_b.png");
+		game.load.spritesheet('select_b', 'assets/sprites/select_b.png', 132, 40);
+		game.load.spritesheet('continue_b', 'assets/sprites/continue_b.png', 140, 56);
         game.load.image("thealliance", "assets/sprites/thealliance.png");
         game.load.image("vremyaigr", "assets/sprites/vremyaigr.png");
         game.load.image("book", "assets/sprites/book.png");
@@ -114,17 +121,43 @@ preload.prototype = {
 		game.load.atlasJSONArray("ball_r", "assets/sprites/ball_r.png", "assets/sprites/ball_b.json");
 		game.load.atlasJSONArray("ball_y", "assets/sprites/ball_y.png", "assets/sprites/ball_b.json");
 		game.load.image("pen", "assets/sprites/pen.png");
+		game.load.image("pen_glow", "assets/sprites/pen_glow.png");
 		game.load.image("notepad", "assets/sprites/notepad.png");
+		game.load.image("notepad_glow", "assets/sprites/notepad_glow.png");
 		game.load.image("pillow", "assets/sprites/pillow.png");
+		game.load.image("pillow_glow", "assets/sprites/pillow_glow.png");
 		game.load.image("pack", "assets/sprites/pack.png");
+		game.load.image("pack_glow", "assets/sprites/pack_glow.png");
 		game.load.image("cup", "assets/sprites/cup.png");
+		game.load.image("cup_glow", "assets/sprites/cup_glow.png");
+		game.load.image("air_hockey", "assets/sprites/airHockey.png");
+		game.load.image("puck", "assets/sprites/puck.png");
+		game.load.spritesheet('speaker', 'assets/sprites/speaker.png', 286, 220, 4);
+		
+		game.load.image("1_track", "assets/sprites/1_track.png");
+		game.load.image("business", "assets/sprites/business.png");
+		game.load.image("hey_listen", "assets/sprites/hey_listen.png");
+		game.load.image("kojima", "assets/sprites/kojima.png");
+		game.load.image("loves", "assets/sprites/loves.png");
+		game.load.image("minecraft", "assets/sprites/minecraft.png");
 		
 		//аудио
 		game.load.audio('Synthwave','assets/audio/Electronic_80s_Synthwave.wav');
+		game.load.audio('bookOpen', 'assets/audio/bookOpen.ogg');
+		game.load.audio('bookClose', 'assets/audio/bookClose.ogg');
+		game.load.audio('error', 'assets/audio/error.ogg');
+		game.load.audio('true','assets/audio/true.wav');
+		game.load.audio('collectWP','assets/audio/collectWP.ogg');
+		game.load.audio('click','assets/audio/click.wav');
+		game.load.audio('reset', 'assets/audio/reset.mp3');
+		game.load.audio('victory','assets/audio/victory.ogg');
+		game.load.audio('tick_tock','assets/audio/tick_tock.wav');
+		game.load.audio('dialog','assets/audio/dialog.wav');
+
 		
 		//mobs
-
-
+		game.load.atlasJSONArray("mobs", "assets/atlas/mobs.png", "assets/atlas/mobs.json");
+		game.load.atlasJSONArray("mobs-walkers", "assets/atlas/mobs-walkers.png", "assets/atlas/mobs-walkers.json");
 
 
     },
