@@ -137,6 +137,7 @@ playGame.prototype = {
         game.physics.arcade.collide(player, npc_sasha);
         game.physics.arcade.collide(player, npc_ecologist);
         game.physics.arcade.collide(player, npc_hostess);
+		game.physics.arcade.collide(player, group_mob);
 		game.physics.arcade.collide(player, group_mob_walkers);
 		game.physics.arcade.collide(player, welcomePack, this.collectWelcomePack);
         this.movePlayer();
@@ -216,6 +217,7 @@ Player.prototype.update = function () {
 	player.SignalDistance.dispatch(416, 1664, content.point_4[1], 3);
 	player.SignalDistance.dispatch(416, 832, content.point_5[1], 4);
 	player.SignalDistance.dispatch(500, 645, content.point_5[1], 5);
+	
     // player walk animation
     if (player_state == PLAYER_STATE.WALKING_DOWN) {
         this.animations.play("walk-front");
@@ -361,7 +363,6 @@ var groupDialogWin;
 function DialogWin(content, i, dialogbuttons, npc_id) {
 	
     groupDialogWin = game.add.group();
-	//if (groupDialogWin.children.length > 0) {groupDialogWin.destroy();}
 	groupDialogWin.name = "dialog";
     dialogframe = game.add.image(0, 432, "dialogframe");
     dialogframe.fixedToCamera = true;
@@ -378,12 +379,6 @@ function DialogWin(content, i, dialogbuttons, npc_id) {
 	speakerName.fixedToCamera = true;
 	
 	groupDialogWin.addMultiple([dialogframe, dialogtext, nextbutton, speakerName, speakerFrame]);
-	
-	//nextbutton.forceOut=true;
-/* 	nextbutton.update=function(){
-	game.world.removeChild(groupDialogWin);
-} */
-//game.world.onChildInputUp.add(destroyGroupDialogWin);
 }
 
 var switchKey = 1;
@@ -408,10 +403,7 @@ function autoHRdialog(x, y, content, keyAutoDialog) {
 	}
 }
 function destroyGroupDialogWin() {
-   // groupDialogWin.removeChildren();
-	//game.world.removeChildAt(37);
 	groupDialogWin.destroy(true);
-	
 }
 
 var point1_key = 1;
@@ -449,10 +441,8 @@ var point2_key = 2;
 function Point2() {
    
    chewbacca.events.onInputUp.add(mission, this);
-   //game.world.children[37].pendingDestroy=true;
    
     function mission() {
-		//game.world.removeChildAt(37);
 		dialogs = game.add.audio('dialog');
 		dialogs.play();
 		groupDialogWin.destroy();
@@ -533,6 +523,11 @@ var checkVremyaIgr = 0;
 var checkIgravCifri = 0;
 
 function selectBook(a, b, c, coverBook, bookY) {
+	
+	groupBook = game.add.group();
+	groupBook.name = "groupbook";
+	if (game.world.getByName("groupbook").length > 1) {game.world.getByName("groupbook").destroy();}
+	
 	bookOpen = game.add.audio('bookOpen');
 	bookOpen.play();
     book = game.add.image(561, bookY, coverBook);
@@ -544,6 +539,8 @@ function selectBook(a, b, c, coverBook, bookY) {
     selectButton = game.add.button(560, 538, "select_b", null, null, 1, 0);
     selectButton.fixedToCamera = true;
     selectButton.onInputUp.add(BookSelectionAnimation, selectButton);
+	
+	groupBook.addMultiple([book, continueButton, selectButton]);
 
     if (book.key == "thealliance" && checkTheAlliance == 1) {
         selectButton.destroy();
@@ -556,11 +553,11 @@ function selectBook(a, b, c, coverBook, bookY) {
     }
     if (counterBook == 3) {
         selectButton.destroy();
-    }
-
+    }								
 }
 
 function BookSelectionAnimation() {
+	
     if (book.key == "thealliance" || book.key == "vremyaigr" || book.key == "igravcifri") {
 		truth = game.add.audio('true');
 		truth.play();
@@ -620,9 +617,7 @@ function toPoint4() {
 function destroyBook() {
 	bookClose = game.add.audio('bookClose');
 	bookClose.play();
-    book.destroy();
-    continueButton.destroy();
-    selectButton.destroy();
+    groupBook.destroy();
 }
 var point4_key = 1;
 var Point4 = function (npc_id) {
@@ -782,7 +777,7 @@ var point7_key = 1;
 	 timer = game.time.create(false);
 	 timer.loop(Phaser.Timer.MINUTE, updateCounter, this);
 	 timer.start();
-	 music.volume = 0.03;
+	 music.volume = 0.07;
 	 tick_tock = game.add.audio('tick_tock');
 	 tick_tock.loop = true;
 	 tick_tock.play();
@@ -803,7 +798,7 @@ var point7_key = 1;
  }
  function Point8(){
 	 tick_tock.stop();
-	 victory = game.add.audio('victory');
+	 victory = game.add.audio('victory', 0.5);
 	 victory.play();
 	 music.volume = 0.4;
 	 switchKey++;

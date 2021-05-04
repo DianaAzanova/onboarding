@@ -2,7 +2,10 @@ var titleScreen = function (game) {};
 titleScreen.prototype = {
     create: function () {
 		music = game.sound.play('Synthwave',0.4, true);
-        background = game.add.image(0, 0, "title-bg");
+		background = game.add.video('title-bg');
+		background.play(true);
+		background.addToWorld();
+      //  background = game.add.image(0, 0, "title-bg");
         this.title = game.add.image(game.width - 544, 200, "logo");
         this.title.anchor.setTo(0.5);
         this.title.alpha = 0;
@@ -47,6 +50,7 @@ titleScreen.prototype = {
         heroine.events.onInputUp.add(selectHeroine, this);
 
         function selectHero() {
+			game.sound.play('dialog');
             atlas = "personages";
             startframe = "hero-idle-back";
             playerIdleFront = "hero-idle-front";
@@ -58,6 +62,7 @@ titleScreen.prototype = {
             this.game.state.start('PlayGame');
         }
         function selectHeroine() {
+			game.sound.play('dialog');
             atlas = "personages";
             startframe = "heroine-idle-back";
             playerIdleFront = "heroine-idle-front";

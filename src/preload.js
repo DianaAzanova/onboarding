@@ -3,6 +3,7 @@ player,
 gameWidth = 1088,
 gameHeight = 640,
 globalMap,
+background,
 hero,
 heroine,
 music,
@@ -23,6 +24,7 @@ groupGlow,
 welcomePack,
 group_mob_walkers,
 group_mob,
+groupBook,
 chewbacca,
 counter,
 updateCounter,
@@ -68,7 +70,8 @@ preload.prototype = {
         loadingBar.anchor.setTo(0.5);
         game.load.setPreloadSprite(loadingBar);
         // load title screen
-        game.load.image("title-bg", "assets/title/bg.png");
+      //  game.load.image("title-bg", "assets/title/bg.gif");
+		game.load.video('title-bg', 'assets/title/bg.webm');
         game.load.image("logo", "assets/title/logo.png");
         game.load.image("title-press-enter", "assets/title/press.png");
         game.load.image("instructions", "assets/title/control.png");
