@@ -3,7 +3,6 @@ titleScreen.prototype = {
     create: function () {
 		music = game.sound.play('Synthwave',0.4, true);
 		background = game.add.video('title-bg');
-		background.volume = 0;
 		background.play(true);
 		background.addToWorld();
       //  background = game.add.image(0, 0, "title-bg");
