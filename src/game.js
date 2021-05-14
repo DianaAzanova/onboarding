@@ -440,7 +440,7 @@ var point2_key = 2;
  
 function Point2() {
    
-   chewbacca.events.onInputUp.add(mission, this);
+   chewbacca.events.onInputUp.addOnce(mission, this);
    
     function mission() {
 		dialogs = game.add.audio('dialog');
@@ -755,16 +755,17 @@ var point7_key = 1;
 	//цикл создания мобов и мобов ходящих
 	
 	for (id_mob = 0; id_mob <= 11; id_mob++) {
-		var name = mobs_db[id_mob].name;
-	var end_x = mobs_db[id_mob].end_x;
-	var end_y = mobs_db[id_mob].end_y;
-            game.add.sprite(end_x, end_y, "mobs", name + "-front");
+		var id = mobs_db[id_mob].id;
+		var end_x = mobs_db[id_mob].end_x;
+		var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs", id + "-front");
+			
         }
     for (id_mob = 12; id_mob <= 20; id_mob++) {
-		var name = mobs_db[id_mob].name;
-	var end_x = mobs_db[id_mob].end_x;
-	var end_y = mobs_db[id_mob].end_y;
-            game.add.sprite(end_x, end_y, "mobs-walkers", name + "-idle-front");
+		var id = mobs_db[id_mob].id;
+		var end_x = mobs_db[id_mob].end_x;
+		var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs-walkers", id + "-idle-front");
         }
 	
 	
