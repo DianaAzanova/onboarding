@@ -100,8 +100,7 @@ playGame.prototype = {
 
         BookGlowGroup.setAll("inputEnabled", true);
         BookGlowGroup.setAll("input.useHandCursor", true);
-        BookGlowGroup.setAll("alpha", 0);
-		BookGlowGroup.getTop();
+		BookGlowGroup.setAll("alpha", 0);
         //BookGlowGroup.onChildInputUp.add(selectBook, this, 0,);
 		
 		const getSetAlphaCallback = (character, alpha) => () => {
@@ -109,7 +108,7 @@ playGame.prototype = {
         }
         BookGlowGroup.forEach((character) => {
             character.events.onInputOver.add(getSetAlphaCallback(character, alpha = 1), this)
-            character.events.onInputOut.add(getSetAlphaCallback(character, alpha = 0), this)
+            character.events.onInputOut.add(getSetAlphaCallback(character, alpha = 0.7), this)
         }, );
     },
 	
@@ -137,8 +136,6 @@ playGame.prototype = {
         game.physics.arcade.collide(player, npc_sasha);
         game.physics.arcade.collide(player, npc_ecologist);
         game.physics.arcade.collide(player, npc_hostess);
-		game.physics.arcade.collide(player, group_mob);
-		game.physics.arcade.collide(player, group_mob_walkers);
 		game.physics.arcade.collide(player, welcomePack, this.collectWelcomePack);
         this.movePlayer();
 		
@@ -440,7 +437,7 @@ var point2_key = 2;
  
 function Point2() {
    
-   chewbacca.events.onInputUp.add(mission, this);
+   chewbacca.events.onInputUp.addOnce(mission, this);
    
     function mission() {
 		dialogs = game.add.audio('dialog');
@@ -516,6 +513,7 @@ function Point3() {
         counterText = game.add.bitmapText(95, 52, "pixel_font", "0/3", 24);
         counterText.fixedToCamera = true;
         counterBook = 0;
+		BookGlowGroup.setAll("alpha", 0.7);
     }
 
 var checkTheAlliance = 0;
@@ -599,6 +597,7 @@ function updateCounterBook() {
     if (counterBook == 3) {
         counterFrame.loadTexture("counter3");
         counterText.text = "3/3";
+		BookGlowGroup.setAll("alpha", 0);
 		point3_key++;
         timer = game.time.create();
         timer.add(3000, toPoint4, this);
@@ -755,16 +754,17 @@ var point7_key = 1;
 	//цикл создания мобов и мобов ходящих
 	
 	for (id_mob = 0; id_mob <= 11; id_mob++) {
-		var name = mobs_db[id_mob].name;
-	var end_x = mobs_db[id_mob].end_x;
-	var end_y = mobs_db[id_mob].end_y;
-            game.add.sprite(end_x, end_y, "mobs", name + "-front");
+		var id = mobs_db[id_mob].id;
+		var end_x = mobs_db[id_mob].end_x;
+		var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs", id + "-front");
+			
         }
     for (id_mob = 12; id_mob <= 20; id_mob++) {
-		var name = mobs_db[id_mob].name;
-	var end_x = mobs_db[id_mob].end_x;
-	var end_y = mobs_db[id_mob].end_y;
-            game.add.sprite(end_x, end_y, "mobs-walkers", name + "-idle-front");
+		var id = mobs_db[id_mob].id;
+		var end_x = mobs_db[id_mob].end_x;
+		var end_y = mobs_db[id_mob].end_y;
+            game.add.sprite(end_x, end_y, "mobs-walkers", id + "-idle-front");
         }
 	
 	

@@ -161,6 +161,15 @@ preload.prototype = {
 		//mobs
 		game.load.atlasJSONArray("mobs", "assets/atlas/mobs.png", "assets/atlas/mobs.json");
 		game.load.atlasJSONArray("mobs-walkers", "assets/atlas/mobs-walkers.png", "assets/atlas/mobs-walkers.json");
+		
+		game.load.image("mobs20DialogBox", "assets/sprites/mobs20DialogBox.png");
+		game.load.image("mobs19DialogBox", "assets/sprites/mobs19DialogBox.png");
+		game.load.image("mobs18DialogBox", "assets/sprites/mobs18DialogBox.png");
+		game.load.image("mobs11DialogBox", "assets/sprites/mobs11DialogBox.png");
+		game.load.image("mobs9DialogBox", "assets/sprites/mobs9DialogBox.png");
+		game.load.image("mobs8DialogBox", "assets/sprites/mobs8DialogBox.png");
+		game.load.image("mobs5DialogBox", "assets/sprites/mobs5DialogBox.png");
+		game.load.image("mobs2DialogBox", "assets/sprites/mobs2DialogBox.png");
 
 
     },
